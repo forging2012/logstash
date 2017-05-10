@@ -54,7 +54,8 @@ module LogStash
             Setting::TimeValue.new("slowlog.threshold.warn", "-1"),
             Setting::TimeValue.new("slowlog.threshold.info", "-1"),
             Setting::TimeValue.new("slowlog.threshold.debug", "-1"),
-            Setting::TimeValue.new("slowlog.threshold.trace", "-1")
+            Setting::TimeValue.new("slowlog.threshold.trace", "-1"),
+            Setting.new("modules", Array, [])
   ].each {|setting| SETTINGS.register(setting) }
 
   # Compute the default queue path based on `path.data`

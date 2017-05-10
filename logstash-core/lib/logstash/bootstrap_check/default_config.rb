@@ -5,7 +5,8 @@ module LogStash module BootstrapCheck
   class DefaultConfig
     def self.check(settings)
       if settings.get("config.string").nil? && settings.get("path.config").nil?
-        raise LogStash::BootstrapCheckError, I18n.t("logstash.runner.missing-configuration")
+        # raise LogStash::BootstrapCheckError, I18n.t("logstash.runner.missing-configuration")
+        print "disabled for now"
       end
 
       if settings.get("config.string") && settings.get("path.config")
